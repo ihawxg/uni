@@ -1,0 +1,118 @@
+import java.util.Scanner;
+
+public class Application {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Колко тигана има в кухнята ?");
+        int fryingPanCount = scanner.nextInt();
+        System.out.println("Колко тенджери има в кухнята ?");
+        int potsCount = scanner.nextInt();
+        System.out.println("Колко сантиметра е широка кухнята");
+        int kitchenHowWideIsIt = scanner.nextInt();
+        System.out.println("Колко сантиметра е дълга кухнята?");
+        int kitchenHowLongIsIt = scanner.nextInt();
+        System.out.println("Колко сантиметра е висока кухнята?");
+        int kitchenHowHighIsIt = scanner.nextInt();
+        System.out.println("Как се казва главният готвач?");
+        String chiefChefName = scanner.next();
+        System.out.println("Колко готвачи работят в кухнята?");
+        int chiefsNumberCount = scanner.nextInt();
+        System.out.println("Колко сервитьори работят в ресторанта?");
+        int waitersNumberCount = scanner.nextInt();
+        System.out.println("Как се казва отговорника на сосовете ?");
+        String headOfSaucesName = scanner.next();
+        System.out.println("Каква е минималната температура в кухнята?");
+        double kitchenMinimalTemp = scanner.nextInt();
+        System.out.println("Каква е максималната температура в кухнята?");
+        double kitchenMaxTemp = scanner.nextInt();
+        System.out.println("Колко парички имате в банковата си сметка?");
+        double bankAccountFunds = scanner.nextInt();
+        System.out.println("Колко парички е дневният оборот на ресторанта ви?");
+        double restaurantDailyTurnover = scanner.nextDouble();
+        System.out.println("В колко часа отваряте?");
+        double restaurantOpeningTime = scanner.nextDouble();
+        System.out.println("В колко часа затваряте?");
+        double restaurantClosingTime = scanner.nextDouble();
+
+        System.out.println("Желаете ли да отговорите на опционалните въпроси? (yes/no) ");
+
+        String optionalQuestion = scanner.next();
+        if (optionalQuestion.equalsIgnoreCase("yes")) {
+            System.out.println("Разполагате ли с хладилник?");
+            String doesItHaveRefrigirator = scanner.next();
+            System.out.println("Разполагате ли с газов котлон?");
+            String doesItHaveGasStove = scanner.next();
+            System.out.println("Разполагате ли с конвектомат?");
+            String doesItHaveCombiOven = scanner.next();
+            System.out.println("Разполагате ли с електрическа скара?");
+            String doesItHaveElectricGrill = scanner.next();
+            System.out.println("Разполагате ли с аспиратор?");
+            String doesItHaveAspirator = scanner.next();
+        } else if (optionalQuestion.equalsIgnoreCase("no")) {
+            System.out.println("няма информация за отговорите и кухнята не разполага с изброените уреди.");
+        } else {
+            System.out.println("Моля отговорете с yes или no ");
+        }
+            System.out.println("=======================================");
+
+            System.out.println("Моля изберете какво ястие ще ядете ");
+            System.out.println("1 - Местно ястие ");
+            System.out.println("2 - Вегетарианско ястие ");
+            System.out.println("3 - Десерт ");
+
+            int dishType = scanner.nextInt();
+            if (dishType == 1) {
+                System.out.println("Вие избрахте Месно ястие");
+                System.out.println("Моля изберете грамаж на порцията ");
+                System.out.println("Small - за малка порция (450 грама)");
+                System.out.println("Medium - за средна порция (750 грама)");
+                System.out.println("Big - за голяма порция (950 грама)");
+                String dishTypeSize = scanner.next();
+                if (dishTypeSize.equalsIgnoreCase("small")) {
+                    System.out.println("Вие избрахте малка порция ");
+                } else if (dishTypeSize.equalsIgnoreCase("medium")) {
+                    System.out.println("Вие избрахте средна порция ");
+                } else if (dishTypeSize.equalsIgnoreCase("big")) {
+                    System.out.println("Вие избрахте голяма порция");
+                } else {
+                    System.out.println("Грешно въведена порция моля въведете Small/Medium/Big");
+                }
+                System.out.println("Моля изберете един от 3-те степени на приготвяне");
+                System.out.println("Rare - за Rare месо");
+                System.out.println("Medium - за Medium месо");
+                System.out.println("Well Done - за Well done месо");
+                String meatRoastingDegree = scanner.next();
+                if (meatRoastingDegree.equalsIgnoreCase("rare")) {
+
+                }
+
+            } else if (dishType == 2) {
+                System.out.println("Вие избрахте Вегетарианско ястие");
+                System.out.println("Моля изберете един от 3-те вида на ястието ");
+                System.out.println("Vegetarian - за Вегетарианско ястие ");
+                System.out.println("Vegan - за Веганско ястие ");
+                System.out.println("Pesketerian  - за Пескетарианско ястие");
+                String vegeterianDishType = scanner.next();
+                if (vegeterianDishType.equalsIgnoreCase("vegetarian")) {
+                    System.out.println("Вие избрахте Вегетарианско ястие");
+                } else if (vegeterianDishType.equalsIgnoreCase("vegan")) {
+                    System.out.println("Вие избрахте Веганско ястие");
+                } else if (vegeterianDishType.equalsIgnoreCase("Pesketerian")) {
+                    System.out.println("Вие избрахте Пескетарианско ястие");
+                }
+            } else if (dishType == 3) {
+                System.out.println("Вие избрахте Десерт");
+                System.out.println("Моля изберете един от следните Десерти");
+                System.out.println("Cake - За торта");
+                System.out.println("IceCream - за сладолед");
+                String desertType = scanner.next();
+                if (desertType.equalsIgnoreCase("cake")) {
+                    System.out.println("Вие избрахте торта");
+                } else if (desertType.equalsIgnoreCase("icecream")) {
+                    System.out.println("Вие избрахте сладолед");
+                }
+            }
+
+        }
+    }
