@@ -1,0 +1,179 @@
+import java.util.Scanner;
+
+public class Application {
+    public static void main(String[] args) {
+
+        final int ROBOTIC_ARM_COORDINATES_X = 1;
+        final int ROBOTIC_ARM_COORDINATES_Y = 1;
+        final int MISSION_STARTING_OXYGEN_TANK = 168;
+        final int MISSION_STARTING_FUEL_TANK = 90;
+
+        int missionFuelTank = MISSION_STARTING_FUEL_TANK;
+        int missionOxygenTank = MISSION_STARTING_OXYGEN_TANK;
+        int armDirrectionLeft;
+        int armDirrectionRight;
+        int armDirrectionUp;
+        int armDirrectionDown;
+        int currentArmCoordinatesByX = ROBOTIC_ARM_COORDINATES_X;
+        int currentArmCoordinatesByY = ROBOTIC_ARM_COORDINATES_Y;
+
+        Scanner inputScanner = new Scanner(System.in);
+
+        String roboticArmA = "A";
+        String roboticArmB = "B";
+        String roboticArmC = "C";
+
+        String turnonSystem = inputScanner.next();
+        String loadSystem = " ";
+        String unloadSystem = "";
+        String moveArmCoordinatesX = "";
+        String moveArmCoordinatesY = "";
+        String moveArmUp = "";
+        String moveArmDown = "";
+        String moveArmRight = "";
+        String moveArmLeft = "";
+        String loadDirrections = "";
+        boolean isSystemTurnedOn = turnonSystem.equalsIgnoreCase("turnon");
+        boolean isSystemLoaded = loadSystem.equalsIgnoreCase("load");
+        boolean isSystemUnloaded = unloadSystem.equalsIgnoreCase("unload");
+     // boolean isArmCoordinatesMovedByX = moveArmCoordinatesX.equalsIgnoreCase("moveX");
+     // boolean isArmCoordinatesMovedByY = moveArmCoordinatesY.equalsIgnoreCase("moveY");
+     // boolean isArmGoingUp = moveArmUp.equalsIgnoreCase("up");
+     // boolean isArmGoingDown = moveArmDown.equalsIgnoreCase("down");
+     // boolean isArmGoingRight = moveArmRight.equalsIgnoreCase("right");
+     // boolean isArmGoingLeft = moveArmLeft.equalsIgnoreCase("left");
+
+
+        boolean isRoboticArmValid;
+
+
+        while (isSystemTurnedOn) {
+            System.out.println("Системата е включена");
+            loadSystem = inputScanner.next();
+            while (!isSystemLoaded) {
+                String roboticArmDevice = inputScanner.next();
+                boolean isRoboticArmDeviceAValid = roboticArmDevice.equalsIgnoreCase("A");
+                boolean isRoboticArmDeviceBValid = roboticArmDevice.equalsIgnoreCase("B");
+                boolean isRoboticArmDeviceCValid = roboticArmDevice.equalsIgnoreCase("C");
+
+
+                while (isRoboticArmDeviceAValid) {
+                    System.out.println("Ръка А е включена успешно ");
+                    missionFuelTank = missionFuelTank-1;
+
+
+                    while (isRoboticArmDeviceAValid) {
+                        isRoboticArmDeviceBValid = !isRoboticArmDeviceBValid;
+                        isRoboticArmDeviceCValid = !isRoboticArmDeviceCValid;
+                        unloadSystem = inputScanner.next();
+                        if (unloadSystem.equalsIgnoreCase("unload")) {
+                            System.out.println("Ръка А е изключена успешно");
+                            roboticArmDevice = inputScanner.next();
+                            if (isRoboticArmDeviceBValid || isRoboticArmDeviceAValid || isRoboticArmDeviceCValid) {
+                                System.out.println("не може да включите нова ръка");
+                            }
+
+                        }
+
+
+                    }
+                }
+                loadDirrections = inputScanner.next();
+                boolean isArmCoordinatesMovedByX = loadDirrections.equalsIgnoreCase("moveX");
+                boolean isArmCoordinatesMovedByY = loadDirrections.equalsIgnoreCase("moveY");
+            //  boolean isArmGoingUp = loadDirrections.equalsIgnoreCase("up");
+            //  boolean isArmGoingDown = loadDirrections.equalsIgnoreCase("down");
+            //  boolean isArmGoingRight = loadDirrections.equalsIgnoreCase("right");
+            //  boolean isArmGoingLeft = loadDirrections.equalsIgnoreCase("left");
+
+                String inputDirrection= "";
+                boolean isArmGoingUp = inputDirrection.equalsIgnoreCase("up");
+                boolean isArmGoingDown = inputDirrection.equalsIgnoreCase("down");
+                boolean isArmGoingRight = inputDirrection.equalsIgnoreCase("right");
+                boolean isArmGoingLeft = inputDirrection.equalsIgnoreCase("left");
+
+                while (isArmCoordinatesMovedByX){
+                    System.out.println("hei");
+                inputDirrection = inputScanner.next();
+
+                while (isArmGoingUp){
+                armDirrectionUp= inputScanner.nextInt();
+                currentArmCoordinatesByX = currentArmCoordinatesByX - armDirrectionUp;
+                missionOxygenTank = missionOxygenTank - armDirrectionUp++;
+
+                }
+                if (isArmGoingDown){
+
+                }
+                if (isArmGoingRight){
+
+                }
+                if (isArmGoingLeft){
+
+                }
+
+                }
+
+                 while (isArmCoordinatesMovedByY){
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                while (isRoboticArmDeviceBValid) {
+                    System.out.println("Ръка B е включена успешно ");
+                    while (isRoboticArmDeviceBValid) {
+                        isRoboticArmDeviceAValid = !isRoboticArmDeviceAValid;
+                        isRoboticArmDeviceCValid = !isRoboticArmDeviceCValid;
+
+
+                    }
+                }
+
+                while (isRoboticArmDeviceCValid) {
+                    System.out.println("Ръка А е включена успешно ");
+                    while (isRoboticArmDeviceCValid) {
+                        isRoboticArmDeviceBValid = !isRoboticArmDeviceBValid;
+                        isRoboticArmDeviceAValid = !isRoboticArmDeviceAValid;
+
+
+                    }
+                }
+
+                if (!isRoboticArmDeviceAValid && !isRoboticArmDeviceBValid && !isRoboticArmDeviceCValid) {
+                    System.out.println("Не разполагате с подобно устройство");
+                }
+
+
+            }
+
+        }
+
+        while (!isSystemTurnedOn) {
+            System.out.println("Озонобъркачката не е включена - включете я преди да правите каквото и да е било");
+            return;
+        }
+
+
+    }
+}
